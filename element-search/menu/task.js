@@ -8,14 +8,10 @@ const ready = () => {
             const link = subMenu.closest('.menu__item').querySelector('.menu__link');
             link.onclick = () => {
                 if (subMenu.classList.contains('menu_active')) {
-                    subMenu.classList.remove('menu_active');
+                    subMenu.classList.toggle('menu_active');
                     return false;
                 }
-                const activeMenuItem = menu.querySelector('menu_active');
-                if (activeMenuItem) {
-                    activeMenuItem.classList.remove('menu_active');
-                }
-                subMenu.classList.add('menu_active');
+                subMenu.classList.toggle('menu_active');
                 return false;
             };
         }
@@ -23,3 +19,4 @@ const ready = () => {
 };
 
 document.addEventListener('DOMContentLoaded', ready);
+//Реализация дополнительного задания пока не планируется

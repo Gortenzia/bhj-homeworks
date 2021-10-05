@@ -7,9 +7,8 @@ function slider() {
 
     const activeSlider = () => {
         for (let slide of sliderItem) {
-            slide.classList.remove('slider__dot_active')
+            slide.classList.toggle('slider__item_active')
         }
-        sliderItem.classList.add('slider__dot_active');
     };
 
     const next = () => {
@@ -32,3 +31,6 @@ function slider() {
         return false;
     }
 };
+
+slider();
+
