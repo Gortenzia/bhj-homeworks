@@ -1,36 +1,34 @@
-function slider() {
-    const sliderItem = document.querySelectorAll('.slider__item');
-    const rightArrow = document.querySelector('.slider__arrow_next')
-    const leftArrow = document.querySelector('.slider__arrow_prev');
 
-    let index = 0;
+const slides = document.querySelectorAll('.slider__item');
+const nextArrow = document.querySelector('.slider__arrow_next')
+const previousArrow = document.querySelector('.slider__arrow_prev');
 
-    const activeSlider = () => {
-        for (let slide of sliderItem) {
-            slide.classList.toggle('slider__item_active')
-        }
-    };
+let index = 0;
 
-    const next = () => {
-        (index === sliderItem.length - 1) ? index = 0 : (index += 1);
-        activeSlider(index)
+const activeSlide = (n) => {
+    for (let slide of slides) {
+        slide.classList.remove('slider__item_active')
     }
+    slides[n].classList.toggle('slider__item_active');
+}
 
-    const prev = () => {
-        (index === 0) ? index = sliderItem.length - 1 : (index -= 1);
-        activeSlider(index)
-    };
-
-    rightArrow.onclick = () => {
-        next();
-        return false;
+previousArrow.addEventListener('click', function () {
+    if (index === slides.length - 1) {
+        index = 0;
+        activeSlide(index);
+    } else {
+        index++;
+        activeSlide(index);
     }
+});
 
-    leftArrow.onclick = () => {
-        prev();
-        return false;
+nextArrow.addEventListener('click', function () {
+    if (index === 0) {
+        index = slides.length - 1;
+        activeSlide(index);
+    } else {
+        index--;
+        activeSlide(index);
     }
-};
-
-slider();
+});
 
