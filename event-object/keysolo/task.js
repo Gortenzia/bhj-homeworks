@@ -19,10 +19,10 @@ class Game {
   registerEvents() {
     //1.Получить DOM-элемент текущего символа, который необходимо ввести (свойство this.currentSymbol)
     //2.Получить символ, который был введён с клавиатуры.
-    const currentSymbol = this.currentSymbol.textContent;
-    const typeSymbol = this.wordElement.innerHTML;
+    const currentSymbolText = this.currentSymbol.textContent;
+    const typeSymbol = KeyboardEvent.char;
     document.addEventListener('keyup', function (event) {
-      if (event.key < KeyboardEvent.char && currentSymbol === typeSymbol) {
+      if (event.key && currentSymbolText === typeSymbol) {
         this.success();
       } else {
         this.fail();
