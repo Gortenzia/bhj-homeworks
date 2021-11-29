@@ -16,18 +16,17 @@ class Game {
     this.lossElement.textContent = 0;
   }
 
+  //Засчитывает каждый символ как слово, а это неправильно
   registerEvents() {
-    //1.Получить DOM-элемент текущего символа, который необходимо ввести (свойство this.currentSymbol)
-    //2.Получить символ, который был введён с клавиатуры.
-    const currentSymbolText = this.currentSymbol.textContent;
+    const currentSymbolText = this.currentSymbol.char;
     const typeSymbol = KeyboardEvent.char;
-    document.addEventListener('keyup', function (event) {
+    document.onkeyup = (event) => {
       if (event.key && currentSymbolText === typeSymbol) {
         this.success();
       } else {
         this.fail();
       }
-    })
+    }
   }
 
   success() {
