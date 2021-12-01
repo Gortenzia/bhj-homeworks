@@ -4,33 +4,39 @@
 
 
 const rotatorCases = Array.from(document.getElementsByClassName('rotator__case'));
-let len = rotatorCases.length;
-let intervalCounter = 1;
-
-const addActive = () => {
-    for (let rotatorCase of rotatorCases) {
-        intervalCounter++;
-        if (intervalCounter > len) {
-            intervalCounter = 1;
-            rotatorCase.classList.add('rotator__case_active');
-        }
+for (let rotatorCase of rotatorCases) {
+    for (let attr of rotatorCase.attributes) {
+        console.log(`${attr.name} = ${attr.value}`);
     }
+
 }
-setInterval(addActive(), 1000);
+//let len = rotatorCases.length;
+//let intervalCounter = 1;
+
+//const addActive = () => {
+    //for (let rotatorCase of rotatorCases) {
+        //intervalCounter++;
+        //if (intervalCounter > len) {
+           // intervalCounter = 1;
+            //rotatorCase.classList.add('rotator__case_active');
+       // }
+    //}
+//}
+//setInterval(addActive(), 1000);
 //Добавить каждому спану свой интервал через setInterval(rotatorCases[0].addActive(), 1000); и тд
 //фунция должна добавлять активность выбраному спану, ждать и убирать
 //активность, затем передавать активность следующему спану, когда будет достигнута rotatorCases.length -1, переместиться снова к первому элементу, типа слайдера но со спанами
 
-const removeActive = () => {
-    for (let rotatorCase of rotatorCases) {
-        intervalCounter++;
-        if (intervalCounter > len && rotatorCase.classList.contains('rotator__case_active')) {
-            intervalCounter = 1;
-            rotatorCase.classList.remove('rotator__case_active');
-        }
-    }
-}
-setInterval(removeActive(), 2000);
+//const removeActive = () => {
+    //for (let rotatorCase of rotatorCases) {
+        //intervalCounter++;
+        //if (intervalCounter > len && rotatorCase.classList.contains('rotator__case_active')) {
+          // intervalCounter = 1;
+           // rotatorCase.classList.remove('rotator__case_active');
+        //}
+    //}
+//}
+//setInterval(removeActive(), 2000);
 
-document.addEventListener('DOMContentLoaded', addActive);
-document.addEventListener('DOMContentLoaded', removeActive);
+//document.addEventListener('DOMContentLoaded', addActive);
+//document.addEventListener('DOMContentLoaded', removeActive);
