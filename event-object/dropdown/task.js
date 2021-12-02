@@ -11,11 +11,11 @@ function dropdownOnclick() {
                 for (let dropdownItem of dropdownItems) {
                     dropdownItem.addEventListener('click', function changeText(event) {
                         dropdown.textContent = event.target.textContent;
-                        //Event.preventDefault();
                         const links = Array.from(document.getElementsByClassName('dropdown__link'));
                         links.onclick = function (event) {
                             event.preventDefault();
                         }
+                        list.classList.remove('dropdown__list_active');
                         event.preventDefault();
                     });
                 }
