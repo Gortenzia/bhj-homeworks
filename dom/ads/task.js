@@ -12,10 +12,12 @@ setInterval(rotator, 1000);
 for (let rotatorCase of rotatorCases) {
     for (let attr of rotatorCase.attributes) {
         console.log(`${attr.name} = ${attr.value}`);
-        if (attr.dataset.color === 'red') {//Cannot read properties of undefined (reading 'color')
-            this.span.color = 'red'; //Не верно, цвет не присваивает
+        if (this.attr.dataset.color === 'red') {//Cannot read properties of undefined (reading 'color')
+            this.rotatorCase.style.color = 'red'; //Не верно, цвет не присваивает
         }
     }
+    let computedStyle = getComputedStyle(document.rotatorCase);
+    console.log(computedStyle.dataColor);
 
 }
 document.addEventListener('DOMContentLoaded', rotator);
