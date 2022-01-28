@@ -56,51 +56,29 @@ class Autocomplete {
 
   renderMatches(matches) {
     const html = matches.map(item => `
-    	<li>
-        <span class="autocomplete__item"
-        	data-index="${item.index}"
-          data-id="${item.value}"
-        >${item.text}</span>
-      </li>
-    `);
+  <li>
+  <span class ='autocomplete__item'
+   data-index="${item.index}"
+   data-id="${item.value}">${item.text}</span>
+  </li>
+  `);
 
     this.list.innerHTML = html.join('');
   }
 
   getMatches(text) {
-    const arrItem = this.input.options;
-    const result = [];
-
-    arrItem.forEach(element = > {
-      if(element.includes(text)) {
-      result.push({
-        text: element.text,
-        value: element.value;
-      })
-    }
-  })
-
-    /*
-      TODO: этот метод нужно дописать
-      text - фраза, которую вводят в поле поиска
-      Метод должен вернуть массив.
-
-      Он формируется на основе списка опций select-элемента (this.input)
-      Подходящие опции - те, чей текст содержит то, что есть в аргументе text
-      Необходимо вернуть массив объектов со свойствами:
-      {
-        text: 'Содержимое <option>',
-        value: 'Содержимое атрибута value'
+    let arr = [];
+    const obj = Array.from(this.input.options);
+    for (let i = 0; i < obj.length; i++) {
+      if (obj[i].text) {
+        arr.push({
+          text: obj[i].text,
+          value: obj[i].value
+        })
       }
-    */
-  
-    return[
-    {
-      text: 'Чубакка',
-      value: '1'
     }
-  ];
-}
+    return arr;
+  }
 }
 
 new Autocomplete(document.querySelector('.autocomplete'));
