@@ -93,6 +93,7 @@ class Autocomplete {
         value: 'Содержимое атрибута value'
       }
     */
+  
     return[
     {
       text: 'Чубакка',
