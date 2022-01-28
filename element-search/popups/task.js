@@ -20,7 +20,7 @@ for (let closeButton of closeButtons) {
     }
 }
 
-//По нажатию на элемент с классом show-success покажите окно #modal_success
+
 const showSuccessModalButton = document.getElementsByClassName('btn_danger');
 console.log(showSuccessModalButton[0])
 

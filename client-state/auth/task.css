@@ -5,19 +5,20 @@
   display: block;
 }
 .control {
-    width: 100%;
+    width: 80%;
     display: block;
     padding: 10px 20px;
     margin: 0 0 20px 0;
     font-family: Golos, Arial, sans-serif;
     border: 1px solid #e2e2e2;
+    border-radius: 5%;
     box-sizing: border-box;
 }
 
 .btn {
   font-family: Golos, Arial, sans-serif;
   color: #fff;
-  background-color: #06f;
+  background-color: rgb(255, 102, 0);
   border: 1px solid transparent;
   border-radius: 2px;
   box-sizing: border-box;
